@@ -1,4 +1,5 @@
-import random
+import random 
+from llama import bot_ai
 
 win = ("abc", "def", "ghi", "adg", "beh", "cfi", "aei", "ceg")
 grid = list("abcdefghi")
@@ -37,8 +38,8 @@ def check_win(player):
 
 
 
-def bot_():
-    return random.choice(grid)
+# def bot_():
+#     return random.choice(grid)
 
 
 
@@ -66,7 +67,9 @@ def start():
             print(name," Win .")
             break
 
-        bot_choice = bot_()
+        bot_choice = bot_ai(f"\n  {a} | {b} | {c} \n ___ ___ ___\n\n  {d} | {e} | {f} \n ___ ___ ___ \n\n  {g} | {h} | {i}\n")
+        print(f"\n  {a} | {b} | {c} \n ___ ___ ___\n\n  {d} | {e} | {f} \n ___ ___ ___ \n\n  {g} | {h} | {i}\n")
+        print(bot_choice)
         bot += bot_choice
         grid.remove(bot_choice)
         game(bot_choice,False)
